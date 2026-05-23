@@ -11,7 +11,6 @@ namespace UI
         [Header("Progress")]
         [SerializeField] private Slider progressBar;
         [SerializeField] private TextMeshProUGUI statusLabel;
-        [SerializeField] private TextMeshProUGUI foundLabel;
 
         [Header("Buttons")]
         [SerializeField] private Button startButton;
@@ -41,11 +40,6 @@ namespace UI
         public void SetStatus(string text)
         {
             statusLabel.text = text;
-        }
-
-        public void SetFoundCount(int count)
-        {
-            foundLabel.text = $"Found: {count}";
         }
 
         public void SetState(SearchState state)

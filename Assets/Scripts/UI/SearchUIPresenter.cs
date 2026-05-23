@@ -43,10 +43,6 @@ namespace UI
                 .Subscribe(t => _view.SetStatus(t))
                 .AddTo(_disposables);
 
-            _model.FoundCount
-                .Subscribe(c => _view.SetFoundCount(c))
-                .AddTo(_disposables);
-
             _model.State
                 .Subscribe(s => _view.SetState(s))
                 .AddTo(_disposables);
@@ -62,7 +58,7 @@ namespace UI
                         var m = results[i].Offset;
                         sb.AppendLine($"  [{i}] pos=({m.m03:F2},{m.m13:F2},{m.m23:F2})");
                     }
-                    if (results.Count > MaxVisibleOffsets) sb.AppendLine("  ...");
+                    if (results.Count > MaxVisibleOffsets) sb.AppendLine("...");
                     _view.SetResults(sb.ToString());
                 })
                 .AddTo(_disposables);
